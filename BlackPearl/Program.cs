@@ -8,40 +8,41 @@
 
 //var myPearlNecklesList = new PearlList(5);
 
-Console.WriteLine("Factory skapa en slumpmässig pärla här");
+// Här skapas en slumpmässig pärla
+Console.WriteLine("Factory skapade en slumpmässig pärla här:");
 Console.WriteLine(Pearl.Factory.CreateRandomPearl());
 
-// Listan skaps
+// Listan/Halsbandet skapas här:
 var myPearlNecklesList = PearlList.Factory.CreateRandomList(35);
 
-// Sortera listan i diameter color shape
+// Här sorteras listan/halsbandet först efter diameter sedan färg(color) och sist form(shape)
 Console.WriteLine();
 myPearlNecklesList.Sort();
-Console.WriteLine("Listan över alla pärlor sorterad i diameter color shape (Halsbandet alltså)");
+Console.WriteLine("Alla pärlor sorterad efter diameter color shape (Halsbandet alltså)");
 Console.WriteLine(myPearlNecklesList);
 
-// Räkna hur många elemet det finns totalt
+// Här räknas det ut hur många elemet det finns totalt i listan/halsbandet.
 var totalElements = myPearlNecklesList.Count();
 Console.WriteLine($"Totalt i halsbandet finns: {totalElements} element");
 
-//Räkna hur många Saltvattenpärlor det finns det finns i halsbandet
+// Här räknas det ut hur många Saltvattenpärlor det finns totalt i listan/halsbandet.
 var totalElementsSaltVatten = myPearlNecklesList.Count2();
 Console.WriteLine();
 Console.WriteLine($"Antal Saltvattenpärlor i halsbandet: {totalElementsSaltVatten}");
 
-//Räkna hur många Sötvattenpärlor det finns i halsbandet
+// Här räknas det ut hur många Sötvattenpärlor det finns totalt i listan/halsbandet.
 var totalElementsSötVatten = myPearlNecklesList.Count3();
 Console.WriteLine();
 Console.WriteLine($"Antal Sötvattenpärlor i halsbandet: {totalElementsSötVatten}");
 
-// Hitta en pärla den första med......
+// Hitta den första pärla med...... ex en vit, en med en diameter på 19mm, en som är Droppformad
 var findPearl = new Pearl();
-//findPearl.Color = "Vit";
-findPearl.Diameter = 19;
+findPearl.Color = "Vit";
+//findPearl.Diameter = 19;
 //findPearl.Shape = "Droppformad";
 Console.WriteLine();
 Console.WriteLine($"Pärlan du söker efter finns på index: {myPearlNecklesList.IndexOf(findPearl)} i halsbandet");
 
 // Det totala priset för hela halsbandet.
 Console.WriteLine();
-Console.WriteLine($"Totala priset för hela halsbandet: {myPearlNecklesList.totalPrice}");
+Console.WriteLine($"Totala priset för hela halsbandet: {myPearlNecklesList.totalPrice} SEK");

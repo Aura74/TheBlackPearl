@@ -9,9 +9,7 @@ namespace BlackPearl
     internal interface IPearlList
     {
         public int Count();
-
         public int totalPrice { get;}
-
         public void Sort();
     }
 }

@@ -23,7 +23,7 @@ namespace BlackPearl
                 {
                     return basePrice * Diameter * 2;
                 }
-                else
+                else // om den är Sötvatten
                 {
                     return basePrice * Diameter;
                 }
@@ -31,10 +31,11 @@ namespace BlackPearl
             set { price = value; }
         }
 
-        //Skriv i fler här  funkar inte utan, 
+        // Måste vara med fast det står 0 references
         public int CompareTo(IPearl other)
         {
-            // om level inte är sorterad redan så sorteras den nu efter level, och sedan efternamn, är level redan sorterat så hoppar den direkt till efternamn
+            // om diameter inte är sorterad redan så sorteras den nu
+            // efter diameter, och sedan Color, och sedan shape
             if (Diameter != other.Diameter)
             {
                 return Diameter.CompareTo(other.Diameter);
@@ -49,13 +50,13 @@ namespace BlackPearl
             }
         }
         
-        //Skriv i fler här,  funkar inte utan
+        // Funkar inte utan denna
         public bool Equals(IPearl other)
         {
             return (Color) == (other.Color);
         }
 
-       // public bool Equals(IPearl other) => (this.Size, this.Color, this.Shape, this.Type) == (other.Size, other.Color, other.Shape, other.Type);
+        // public bool Equals(IPearl other) => (this.Size, this.Color, this.Shape, this.Type) == (other.Size, other.Color, other.Shape, other.Type);
         //public override bool Equals(object obj) => Equals(obj as IPearl);
         //public override int GetHashCode() => (Size, Color, Shape, Type).GetHashCode();
 
@@ -63,13 +64,13 @@ namespace BlackPearl
         public override bool Equals(object obj) => Equals(obj as IPearl);
         public override int GetHashCode() => (Color, Shape).GetHashCode();
 
-        // Skriver ut Member, måste vara med
+        // Skriver ut Pearl, måste vara med
         public override string ToString()
         {
-            return $"Färg: {Color}, Formen: {Shape}, VattenTyp: {Type}, Diameter: {Diameter}mm och priset för pärlan är: { Price}sKr";
+            return $"Färg: {Color}, Formen: {Shape}, VattenTyp: {Type}, Diameter: {Diameter}mm och priset för pärlan är: { Price} SKR";
         }
         
-        // Här skapas slumpmässig pärla
+        // Här skapas slumpmässiga pärlor
         public void RandomInit()
         {
                 var rnd = new Random();
@@ -95,7 +96,7 @@ namespace BlackPearl
                 }
         }
 
-        //Utan den blev det inget til color osv
+        // Måste vara med
         public Pearl()
         {
             RandomInit();

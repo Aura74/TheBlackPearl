@@ -25,7 +25,7 @@ namespace BlackPearl
             }
         }
         
-        //Här räknas antalet totala pärlor
+        // Hör till uträkningen av antal pärlor
         public int Count()
         {
             return _pearllist.Count;
@@ -66,7 +66,7 @@ namespace BlackPearl
             return sRet;
         }
 
-        // Innan jag gjorde en Factory
+        // Innan jag gjorde en Factory användes detta.
         //public PearlList(int NrOfMembers)
         //{
         //    for (int i = 0; i < NrOfMembers; i++)
